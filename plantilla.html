@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Moderna y Oscura</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            background-image: url('/fondo.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #1f1c2c, #928dab);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin: 0 auto;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+            font-size: 17px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="Logo" class="logo">
+        
+        <div class="buttons">
+            <button id="copyToClipboard">Copiar plantilla de alianza</button>
+            <button onclick="window.open('https://discord.gg/tu-servidor', '_blank')">Unirse al servidor de Discord</button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Se ha copiado el texto correctamente</div>
+
+    <script>
+        function copyToClipboard() {
+            const text = `🌍 [ HolyMC ] 🌍
+SURVIVAL SEMI-ANÁRQUICO 24/7 (1.16 - 1.21)
+¡Crossplay para Java y Bedrock!
+
+🔥 ¿Buscas adrenalina, PvP y libertad total? ¡HolyMC es tu lugar! 🔥
+
+⚔️ Sin hackers ni mods – Solo habilidad pura y estrategia.
+👥 Únete a un team o crea el tuyo propio y pelea por el dominio del servidor. ¡El poder está en tus manos!
+
+🎮 Compatibilidad total entre Java y Bedrock – ¡No importa desde dónde juegues, únete a la batalla!
+📊 ¡+350 jugadores en nuestro Discord, con comunidad activa y amigable!
+
+💥 TikToks y streams en vivo regularmente. ¡Sé parte de los eventos más intensos y destaca!
+📈 Contenido exclusivo con nuestros streamers y creadores – ¡haz historia con tu equipo!
+
+⏰ Servidor activo 24/7 – Siempre hay jugadores listos para la acción.
+⚡ La diversión nunca para: PvP, construcción, alianzas, ¡todo está en juego!
+
+🔗 Discord:
+ https://discord.gg/jEPGTVqVxF`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('La Alianza Para Dc Fue Copiada Al Portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+    </script>
+</body>
+</html>
